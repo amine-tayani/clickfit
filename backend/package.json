@@ -1,0 +1,20 @@
+{
+  "name": "clickfit-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "click fit app backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "clickfit"
+  ],
+  "author": "amine",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}

@@ -1,0 +1,22 @@
+.drop-zone {
+  border: 1px solid #dee2e6;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.drop-zone.dragover {
+  background-color: #f8f9fa;
+  border-color: #0d6efd;
+}
+
+#preview img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
