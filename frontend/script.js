@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  // Fetch daily fact
   $.ajax({
     url: "http://numbersapi.com/1/30/date?json",
     method: "GET",
@@ -13,12 +12,10 @@ $(document).ready(function () {
     },
   });
 
-  // File upload handling
   const dropZone = $("#drop-zone");
-  const fileInput = $("#fileInput");
+  const filesInput = $("#files");
   const preview = $("#preview");
 
-  // Prevent default drag behaviors
   ["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
     dropZone.on(eventName, preventDefaults);
     $(document).on(eventName, preventDefaults);
@@ -29,7 +26,6 @@ $(document).ready(function () {
     e.stopPropagation();
   }
 
-  // Handle drag & drop
   dropZone.on("dragenter dragover", function () {
     $(this).addClass("dragover");
   });
@@ -43,12 +39,11 @@ $(document).ready(function () {
     handleFiles(files);
   });
 
-  // Handle click upload
   dropZone.on("click", function () {
-    fileInput.click();
+    filesInput.click();
   });
 
-  fileInput.on("change", function () {
+  filesInput.on("change", function () {
     handleFiles(this.files);
   });
 
@@ -72,7 +67,7 @@ $(document).ready(function () {
           const img = $("<img>")
             .addClass("img-fluid rounded")
             .attr("src", response.path);
-          const col = $("<div>").addClass("col-md-4").append(img);
+          const col = $("<div>").addClass("col-md-4 fade-in").append(img);
           preview.append(col);
         },
         error: function () {
